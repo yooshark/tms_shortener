@@ -1,7 +1,5 @@
 from django.urls import path
 from django.views.generic import RedirectView
-
-from cutter import views
 from cutter.views import index, shorten_post, make_shorten, redirect_hash
 
 urlpatterns = [
@@ -10,5 +8,4 @@ urlpatterns = [
     path('shorten/<str:url>', make_shorten, name='shorten'),
     path('<str:url_hash>', redirect_hash, name='redirect'),
     path('favicon.ico', RedirectView.as_view(url='/static/favicon.ico', permanent=True)),
-
 ]
