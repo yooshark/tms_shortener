@@ -1,0 +1,10 @@
+services:
+  web:
+    build: .
+    entrypoint: bin/entrypoint.sh
+    ports:
+      - 8100:8100
+    env_file:
+      - src/.env
+    volumes:
+      - ./src/db.sqlite3:/code/src/db.sqlite3
